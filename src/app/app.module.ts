@@ -6,7 +6,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { GaleryComponent } from './galery/galery.component';
 import { ChairGaleryComponent } from './chair-galery/chair-galery.component';
 import { TableGaleryComponent } from './table-galery/table-galery.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -29,6 +28,7 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { ColorComponent } from './color/color.component';
 import { AddItemComponent } from './add-item-component/add-item-component.component';
 import { PromotionComponent } from './promotion/promotion.component';
+import { CreditCardComponent } from './credit-card/credit-card.component';
 
 
 const routes: Routes = [
@@ -43,7 +43,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    GaleryComponent,
     ChairGaleryComponent,
     TableGaleryComponent,
     NavBarComponent,
@@ -65,6 +64,7 @@ const routes: Routes = [
     ColorComponent,
     AddItemComponent,
     PromotionComponent,
+    CreditCardComponent,
   ],
   imports: [
     BrowserModule,

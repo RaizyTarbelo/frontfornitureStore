@@ -1,18 +1,8 @@
-<!--<app-table></app-table>
-<app-table></app-table>
-<app-table></app-table>
-<app-table></app-table>-->
-<body>
-    <div class="gallery-container">
-        <div class="gallery-item" *ngFor="let order of gallery"><app-table routerLink="/item"></app-table></div>
-        <!-- <div class="gallery-item"><app-table></app-table></div>
-        <div class="gallery-item"><app-table></app-table></div>
-        <div class="gallery-item"><app-table></app-table></div>
-        <div class="gallery-item"><app-table></app-table></div>
-        <div class="gallery-item"><app-table></app-table></div>
-        <div class="gallery-item"><app-table></app-table></div>
-        <div class="gallery-item"><app-table></app-table></div>
-        <div class="gallery-item"><app-table></app-table></div>
-        <div class="gallery-item"><app-table></app-table></div> -->
+
+<div class="gallery-container">
+    <div *ngFor="let item of items" class="gallery-item">
+        <div [routerLink]="['/item', item.id]">
+            <app-table [product]="item"></app-table>
+        </div>
     </div>
-</body>
+</div>
