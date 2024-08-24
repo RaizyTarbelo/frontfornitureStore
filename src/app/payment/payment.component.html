@@ -34,10 +34,10 @@
             </div>
             <div class="section">
                 <h2>פרטי הזמנה:</h2>
-                <p>כיסא כתר *2 - 60 ש"ח</p>
-                <p>שולחן מטבח *1 - 1500 ש"ח</p>
-                <p>משלוח - 100 ש"ח</p>
-                <p><strong>סה"כ לתשלום: 1660 ש"ח</strong></p>
+                <div *ngFor="let item of orderItems">
+                  <p>{{ item.catalog.productName }} *{{ item.quantity }} - {{ item.catalog.price * item.quantity }} ש"ח</p>
+                </div>
+                <p><strong>סה"כ לתשלום: {{ totalPrice }} ש"ח</strong></p>
             </div>
             <div class="section">
                 <h2>נא לסמן סוג משלוח:</h2>
@@ -50,7 +50,28 @@
                     משלוח עד הבית (100 ש"ח)
                 </label>
             </div>
-            <button type="submit" class="checkout-button">מעבר לתשלום מאובטח</button>
+        </form>
+    </div>
+</body>
+
+<body>
+    <div class="container">
+        <form class="payment-form">
+            <div class="section">
+                <h2>פרטי אשראי:</h2>
+                <label for="card-number">מספר כרטיס:</label>
+                <input type="text" id="card-number" name="card-number" required pattern="\d{13,19}" placeholder="מספר כרטיס אשראי">
+
+                <label for="card-expiry">תוקף (MM/YY):</label>
+                <input type="text" id="card-expiry" name="card-expiry" required pattern="\d{2}/\d{2}" placeholder="MM/YY">
+
+                <label for="card-holder">שם בעל הכרטיס:</label>
+                <input type="text" id="card-holder" name="card-holder" required placeholder="שם בעל הכרטיס">
+
+                <label for="card-cvv">CVV:</label>
+                <input type="text" id="card-cvv" name="card-cvv" required pattern="\d{3}" placeholder="CVV">
+            </div>
+            <button type="submit" class="checkout-button">לתשלום</button>
         </form>
     </div>
 </body>
